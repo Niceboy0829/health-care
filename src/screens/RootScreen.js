@@ -89,7 +89,7 @@ const RootScreen = (props) => {
             color = focused ? '#A5593C' : '#707070'
           }
 
-          
+
           return (
             <View>
               {icon == 'home' && <Octicons name={'home'} size={size} color={color} />}
@@ -100,6 +100,7 @@ const RootScreen = (props) => {
           );
         },
       })}
+      
       tabBarOptions={{
         showLabel: true,
         labelStyle: { fontSize: 10 },
