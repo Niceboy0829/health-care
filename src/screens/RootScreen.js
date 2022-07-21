@@ -72,7 +72,7 @@ const RootScreen = (props) => {
           tabBarIcon: ({focused, color, size}) => {
             
             var icon;
-            size = 25;
+            size = 30;
 
             if (route.name === 'Home') {
               icon = 'home';
@@ -101,7 +101,6 @@ const RootScreen = (props) => {
         })}
         tabBarOptions={{
           showLabel: true,
-          height: 200 + getBottomSpace(),
           labelStyle: {fontSize: 10},
           activeTintColor: '#A5593C',
           inactiveTintColor: '#707070',

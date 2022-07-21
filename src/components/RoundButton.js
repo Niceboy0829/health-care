@@ -3,10 +3,10 @@ import {Text, StyleSheet, TouchableOpacity, View} from 'react-native';
 
 export default class RoundButton extends React.Component {
   render() {
-    const {style, title, onPress} = this.props;
+    const {style, title, onPress, color = 'green'} = this.props;
     return (
       <TouchableOpacity style={[style]} onPress={onPress}>
-        <View style={[styles.buttonContainer, styles.strongGreen]}>
+        <View style={[styles.buttonContainer, color == 'green' ? styles.strongGreen : styles.brown]}>
             <Text style={[styles.buttonText, styles.whiteText]}>{title}</Text>
         </View>
       </TouchableOpacity>
@@ -30,6 +30,10 @@ const styles = StyleSheet.create({
   strongGreen: {
     backgroundColor: '#6E9277'
   },  
+
+  brown: {
+    backgroundColor: '#682911'
+  },
 
   whiteText: {
     color: 'white',
