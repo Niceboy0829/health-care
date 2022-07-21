@@ -110,6 +110,8 @@ const styles = StyleSheet.create({
     },
     Icon: {
         marginTop: 25,
+        position: 'absolute',
+        right: 15
     }
 });
 
