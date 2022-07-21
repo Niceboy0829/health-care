@@ -100,7 +100,6 @@ const RootScreen = (props) => {
           );
         },
       })}
-      
       tabBarOptions={{
         showLabel: true,
         labelStyle: { fontSize: 10 },
