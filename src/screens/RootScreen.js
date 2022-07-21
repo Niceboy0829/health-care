@@ -105,11 +105,11 @@ const RootScreen = (props) => {
 
 
 
-      // this is test branch5555
+      // this is test branch5555 - 9999
       
       tabBarOptions={{
         showLabel: true,
-        labelStyle: { fontSize: 30 },
+        labelStyle: { fontSize: 40 },
         activeTintColor: '#A5593C',
         inactiveTintColor: '#707070',
       }}>
