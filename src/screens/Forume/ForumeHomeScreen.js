@@ -2,18 +2,24 @@ import React, {useState} from 'react';
 import {View, StyleSheet, SafeAreaView, Text} from 'react-native';
 import Toast from 'react-native-toast-message';
 
-import BackgroundImage from '../../components/BackgroundImage';
 import LoadingOverlay from '../../components/LoadingOverlay';
+import Images from '../../assets/Images'
+import TopBar from '../../components/TopBar'
 
 const ForumeHomeScreen = () => {
 
     const [loading, setLoading] = useState(false);
     
     return (
-      <View style={styles.flex}>
-        <SafeAreaView style={styles.flex}>
+      <View>
+        <SafeAreaView>
           {loading && <LoadingOverlay />}
           <View>
+            <TopBar 
+              title="Welcome" 
+              isAvatar={true}
+              isBell={true}
+            />
             <Text>Forume Home Screen</Text>
           </View>
         </SafeAreaView>

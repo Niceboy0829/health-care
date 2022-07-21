@@ -7,7 +7,7 @@ import Images from '../assets/Images';
 import RoundButton from '../components/RoundButton';
 
 const WelcomeScreen = (props) => {
-  
+
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {

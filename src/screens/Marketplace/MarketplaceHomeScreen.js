@@ -2,19 +2,25 @@ import React, {useState} from 'react';
 import {View, StyleSheet, SafeAreaView, Text} from 'react-native';
 import Toast from 'react-native-toast-message';
 
-import BackgroundImage from '../../components/BackgroundImage';
 import LoadingOverlay from '../../components/LoadingOverlay';
+import Images from '../../assets/Images'
+import TopBar from '../../components/TopBar'
 
 const MarketplaceHomeScreen = () => {
 
     const [loading, setLoading] = useState(false);
     
     return (
-      <View style={styles.flex}>
-        <SafeAreaView style={styles.flex}>
+      <View>
+        <SafeAreaView>
           {loading && <LoadingOverlay />}
           <View>
-            <Text>Marketplace Home Screen</Text>
+            <TopBar 
+              title="Welcome" 
+              isAvatar={true}
+              isBell={true}
+            />
+            <Text>Marketplace home Screen</Text>
           </View>
         </SafeAreaView>
       </View>

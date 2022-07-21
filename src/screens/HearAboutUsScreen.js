@@ -1,28 +1,51 @@
 import React, {Component, useEffect, useState} from 'react';
 import {connect, useDispatch} from 'react-redux';
-import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
-import SplashScreen from 'react-native-splash-screen';
-import { Dropdown } from 'react-native-element-dropdown';
+import {View, Text, StyleSheet, SafeAreaView, TextInput} from 'react-native';
+import { RadioButton } from 'react-native-paper';
+import { Input } from 'react-native-elements';
 
 import BackgroundImage from '../components/BackgroundImage';
 import RoundButton from '../components/RoundButton';
 import Images from '../assets/Images';
-import {foundations} from '../../redux/constants/configConstants';
 
 const HearAboutUsScreen = (props) => {
+
+  const [checked, setChecked] = useState(0);
+  const [others, setOthers] = useState(false);
+  const selections = ['Instagram', 'Influencer', 'Foundation', 'Friends', 'Family', 'Others'];
   
   return (
-    <View style={styles.container}>
+    <View>
       <BackgroundImage backgroundImage={Images.main_bg_second} />
-      <SafeAreaView style={styles.container}>
-          <View style={styles.contentView}>
+      <SafeAreaView>
+          <View>
             <View style={styles.titleView}>
               <Text style={styles.titleText}> 
                 Where did you {'\n'} hear about us?
               </Text>
             </View>
-            <View style={styles.titleView}>
-              
+            <View style={styles.radioGroup}>
+              { selections.map((selection, index) => 
+                <View style={styles.radioPattern} key={index}>
+                  <RadioButton
+                    value={index}
+                    status={ checked === index ? 'checked' : 'unchecked' }
+                    onPress={() => {
+                      setChecked(index);
+                      setOthers(index === 5 ? true : false);
+                    }}
+                  />
+                  <Text style={styles.radioCaption}>{selection}</Text>
+                </View>
+              )}
+              { others && 
+                <Input
+                  placeholder='type here...'
+                  inputStyle={styles.inputStyle}
+                  inputContainerStyle={styles.inputContainerStyle}
+                  placeholderTextColor='#ffffff'
+                />
+              }
             </View>
             <View style={styles.buttonArea}>
               <RoundButton
@@ -40,20 +63,12 @@ const HearAboutUsScreen = (props) => {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  
-  contentView: {
-    flex: 1,
-    alignItems: 'center',
-  },
 
   titleView: {
-    flex: 1,
+    alignSelf: 'center',
     justifyContent: "center",
     alignItems: 'center',
-    top: -15
+    marginTop: 90
   },
 
   titleText: {
@@ -65,11 +80,37 @@ const styles = StyleSheet.create({
   },
 
   buttonArea: {
-    flex: 1,
-    justifyContent: "center",
+    alignSelf: 'center',
+    position: 'absolute',
+    top: 600,
     width: '90%',
-    bottom: 100
   },
+
+  radioGroup: {
+    marginTop: 100,
+    marginLeft: 100
+  },
+
+  radioPattern: {
+    flexDirection: 'row'
+  },
+
+  radioCaption: {
+    marginTop: 3,
+    color: 'white',
+    fontFamily: 'Open Sans',
+    fontSize: 20
+  },
+
+  inputStyle: {
+    color: '#ffffff',
+  },
+
+  inputContainerStyle: {
+    marginLeft: 20,
+    width: '60%',
+    borderBottomColor: '#ffffff',
+  }
 });
 
 export default HearAboutUsScreen;

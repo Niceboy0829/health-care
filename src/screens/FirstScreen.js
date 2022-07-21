@@ -38,6 +38,7 @@ const FirstScreen = (props) => {
             </View>
             <View>
               <Dropdown
+                dropdownPosition='bottom'
                 style={styles.dropdown}
                 containerStyle={styles.dropdownContainerStyle}
                 selectedTextStyle={styles.selectedTextStyle}
@@ -109,8 +110,6 @@ const styles = StyleSheet.create({
   dropdown: {
     marginTop: -200,
     height: 50,
-    borderBottomColor: 'gray',
-    borderBottomWidth: 0.5,
     borderRadius: 20,
     width: 300,
     backgroundColor: '#ffffff',
@@ -122,7 +121,7 @@ const styles = StyleSheet.create({
   },
   
   dropdownContainerStyle: {
-    borderRadius: 20
+    borderRadius: 20,
   }
 });
 
