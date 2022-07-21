@@ -109,7 +109,7 @@ const RootScreen = (props) => {
       
       tabBarOptions={{
         showLabel: true,
-        labelStyle: { fontSize: 10 },
+        labelStyle: { fontSize: 30 },
         activeTintColor: '#A5593C',
         inactiveTintColor: '#707070',
       }}>
